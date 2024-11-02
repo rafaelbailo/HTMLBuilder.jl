@@ -3,7 +3,7 @@ using HTMLBuilder
 using SafeTestsets, Test
 
 @testset "HTMLBuilder.jl" begin
-  for test ∈ ["utils", "aqua", "format"]
+  for test ∈ ["aqua", "format", "HTMLElements", "utils"]
     @eval begin
       @safetestset $test begin
         include($test * ".jl")
