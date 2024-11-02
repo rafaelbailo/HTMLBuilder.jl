@@ -1,7 +1,7 @@
 name = "HTMLBuilder"
 uuid = "0cf4c2ae-3c55-4387-8def-d33f99d13a02"
 authors = ["Dr Rafael Bailo"]
-version = "0.0.1"
+version = "0.2.0"
 
 [compat]
 julia = "1.6.7"

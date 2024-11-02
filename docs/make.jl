@@ -18,6 +18,7 @@ makedocs(;
   format = Documenter.HTML(;
     sidebar_sitename = false,
     prettyurls = get(ENV, "CI", "false") == "true",
+    repolink = "github.com/rafaelbailo/HTMLBuilder.jl",
     canonical = "https://rafaelbailo.github.io/HTMLBuilder.jl",
     edit_link = "main",
     assets = ["assets/favicon.ico"],
