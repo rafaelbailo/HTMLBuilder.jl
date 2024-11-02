@@ -70,6 +70,6 @@ jobs:
       - run: |
           julia --project=docs -e '
             using Documenter: DocMeta, doctest
-            using DefaultKeywordArguments
-            DocMeta.setdocmeta!(DefaultKeywordArguments, :DocTestSetup, :(using DefaultKeywordArguments); recursive=true)
-            doctest(DefaultKeywordArguments)'
+            using HTMLBuilder
+            DocMeta.setdocmeta!(HTMLBuilder, :DocTestSetup, :(using HTMLBuilder); recursive=true)
+            doctest(HTMLBuilder)'
