@@ -38,11 +38,14 @@ parse_tag_attributes(arg) =
     return ""
   end
 
-metastring(s::AbstractString) = "'$s'";
+metastring(s::AbstractString) = "'$s'"
 
-metastring(s::Real) = metastring(string(s));
+metastring(s::Real) = metastring(string(s))
 
-left_tag() = "<";
-right_tag() = ">";
-left_comment_tag() = "\n<!--";
-right_comment_tag() = "-->\n";
+left_tag() = "<"
+
+right_tag() = ">"
+
+left_comment_tag() = "\n<!--"
+
+right_comment_tag() = "-->\n"
