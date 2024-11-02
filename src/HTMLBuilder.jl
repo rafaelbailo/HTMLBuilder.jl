@@ -1,5 +1,5 @@
 module HTMLBuilder
 
-# Write your package code here.
+include("./utils/settings.jl")
 
 end
