@@ -24,7 +24,7 @@ makedocs(;
     assets = ["assets/favicon.ico"],
     footer = "Copyright © 2024 [Dr Rafael Bailo](https://rafaelbailo.com/). [MIT License](https://github.com/rafaelbailo/HTMLBuilder.jl/blob/main/LICENSE).",
   ),
-  pages = ["Home" => "index.md"],
+  pages = ["Home" => "index.md", "HTML Elements" => "HTMLElements.md"],
 )
 
 deploydocs(; repo = "github.com/rafaelbailo/HTMLBuilder.jl", devbranch = "main")
