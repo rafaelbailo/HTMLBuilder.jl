@@ -1,6 +1,7 @@
 ```@meta
 CurrentModule = HTMLBuilder
 ```
+![HTMLBuilder.jl](https://raw.githubusercontent.com/rafaelbailo/HTMLBuilder.jl/refs/heads/main/docs/src/assets/logo-large.svg)
 
 # HTMLBuilder.jl: Building HTML the Julia way
 
