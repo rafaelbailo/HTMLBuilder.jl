@@ -12,4 +12,6 @@ include("./HTMLElements/register.jl")
 include("./HTMLElements/elements.jl")
 include("./HTMLElements/tags.jl")
 
+include("./parse_HTML.jl")
+
 end
