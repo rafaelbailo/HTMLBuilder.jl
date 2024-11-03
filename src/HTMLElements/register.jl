@@ -12,3 +12,5 @@ macro register(elements...)
     @register($(s))
   end), elements)...)
 end
+
+export @register
