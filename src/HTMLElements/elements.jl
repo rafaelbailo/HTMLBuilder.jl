@@ -68,13 +68,14 @@ const Aliases = ((:cl, :collection),)
 for el ∈ HTMLElements
   @eval begin
     @register $el
-    get_default_config(s::Val{$(Meta.quot(el))}) = (;
+    get_default_config(s::$(Symbol(el, :Val))) = (;
       exclamation = $(el in HTMLElementsExclamation),
       ghost = $(el in HTMLElementsGhost),
       indent = $(el in HTMLElementsIndent),
       single_tag = $(el in HTMLElementsSingleTag),
     )
     export $el
+    export $(Symbol(el, :Val))
     export $(Symbol(el, :Type))
   end
 end
@@ -86,17 +87,20 @@ for pair ∈ Aliases
   end
 end
 
-dv(args...) = HTMLElement(Val(:div), args...)
-dvType = HTMLElement{Val{:div}}
-get_default_config(s::Val{:div}) = (; indent = true,)
-export dv
-export dvType
+const dvVal = Val{:div}
+const divVal = dvVal
+
+const dvType = HTMLElement{dvVal}
 const divType = dvType
-export divType
 
-get_default_attributes(s::Val{:DOCTYPE}) = (; html = "")
+dv(args...) = HTMLElement(dvVal(), args...)
+get_default_config(s::dvVal) = (; indent = true,)
 
-function Base.show(io::IO, x::HTMLElement{Val{:maths}})
+export dv, dvVal, divVal, dvType, divType
+
+get_default_attributes(s::DOCTYPEVal) = (; html = "")
+
+function Base.show(io::IO, x::mathsType)
   print(io, raw"$$")
   for child ∈ x.children
     write(io, child)

@@ -2,7 +2,8 @@ macro register(element)
   return esc(
     quote
       $element(args...) = HTMLElement(Val($(Meta.quot(element))), args...)
-      const $(Symbol(element, :Type)) = HTMLElement{Val{$(Meta.quot(element))}}
+      const $(Symbol(element, :Val)) = Val{$(Meta.quot(element))}
+      const $(Symbol(element, :Type)) = HTMLElement{$(Symbol(element, :Val))}
     end,
   )
 end

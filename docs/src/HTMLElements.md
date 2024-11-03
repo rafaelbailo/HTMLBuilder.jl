@@ -19,6 +19,12 @@ You can also pass multiple arguments to an element:
 p("Some text. ", "Some more text.")
 ```
 
+## Rendering HTML
+HTML elements are handled as Julia structs. **HTMLBuilder.jl** only renders plain HTML by extending the `Base.write` method. Therefore, to get plain HTML, simply convert your element to a `string`:
+```@repl 1
+string(p("Some text."))
+```
+
 ## Nesting elements
 
 HTML elements can be nested. For instance, you can format text using the `b` (bold) and `i` (italic) tags:
