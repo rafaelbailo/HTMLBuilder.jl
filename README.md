@@ -26,7 +26,7 @@ julia> body(
        )
 ```
 which returns
-```julia
+```html
 <body>
   <h1>The Fibonacci numbers</h1>
   <p>Here are the first 5 Fibonacci numbers:</p>
