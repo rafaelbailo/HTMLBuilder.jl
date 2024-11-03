@@ -6,8 +6,6 @@ docs/build/
 docs/parsed/
 docs/Manifest.toml
 
-build.*
-test.*
 dev.*
 docs.*
 .vscode
