@@ -19,42 +19,18 @@ CurrentModule = HTMLBuilder
 **HTMLBuilder.jl** is a package for handling HTML in idiomatic Julia. Currently, it can construct and parse HTML code.
 
 All the HTML elements are treated as Julia structs, so you can easily generate HTML programmatically. For instance, we can list the first `N` Fibonacci numbers. First we import **HTMLBuilder.jl** and define the `Fibonacci` function, as well as `N=5`:
-```julia
-julia> using HTMLBuilder
-julia> Fibonacci(n::Int) = (n <= 2) ? (1) : (Fibonacci(n - 1) + Fibonacci(n - 2));
-julia> N = 5;
+```@repl 1
+using HTMLBuilder
+Fibonacci(n::Int) = (n <= 2) ? (1) : (Fibonacci(n - 1) + Fibonacci(n - 2));
+N = 5;
 ```
 Then, we can construct the list by nesting HTML elements and using a `for` loop:
-```julia
-julia> body(
-         h1("The Fibonacci numbers"),
-         p("Here are the first $N Fibonacci numbers:"),
-         ul([li(string(Fibonacci(n))) for n ∈ 1:N]),
-       )
-```
-which returns
-```julia
-<body>
-  <h1>The Fibonacci numbers</h1>
-  <p>Here are the first 5 Fibonacci numbers:</p>
-  <ul>
-    <li>
-      1
-    </li>
-    <li>
-      1
-    </li>
-    <li>
-      2
-    </li>
-    <li>
-      3
-    </li>
-    <li>
-      5
-    </li>
-  </ul>
-</body>
+```@repl 1
+body(
+  h1("The Fibonacci numbers"),
+  p("Here are the first $N Fibonacci numbers:"),
+  ul([li(string(Fibonacci(n))) for n ∈ 1:N]),
+)
 ```
 
 ### Bug reports, feature requests, and contributions
