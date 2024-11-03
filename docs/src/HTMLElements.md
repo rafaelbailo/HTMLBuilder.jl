@@ -60,7 +60,7 @@ Any additional arguments passed to the element will be treated as content. An `a
 a((; href), "The HTMLBuilder.jl documentation")
 ```
 
-## Register your own HTML elements
+## Registering your own HTML elements
 
 If you need to use an HTML element not exported by **HTMLBuilder.jl**, you can simply add your own with the `@register` macro:
 ```@repl 1
