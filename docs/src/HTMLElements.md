@@ -57,7 +57,7 @@ a((; href), "The HTMLBuilder.jl documentation")
 ## Register your own HTML elements
 
 If you need to use an HTML element not exported by **HTMLBuilder.jl**, you can simply add your own with the `@register` macro:
-```@repl 
+```@repl 1
 @register customelement
 ```
 Now you can work with the new element as you would with any other:

@@ -7,10 +7,10 @@ macro register(element)
   )
 end
 
+export @register
+
 macro register(elements...)
   return Expr(:block, map(s -> esc(quote
     @register($(s))
   end), elements)...)
 end
-
-export @register

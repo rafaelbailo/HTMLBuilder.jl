@@ -27,6 +27,7 @@ makedocs(;
   pages = [
     "Home" => "index.md",
     "HTML Elements" => "HTMLElements.md",
+    "The `HTMLElement` interface" => "HTMLElement_interface.md",
     "Parsing HTML" => "ParsingHTML.md",
   ],
 )

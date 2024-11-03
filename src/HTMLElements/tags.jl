@@ -22,6 +22,8 @@ function tag(
 end
 
 function parse_tag_attributes(attributes::NamedTuple)
+  attributes = NamedTuple(filter(s -> s[2] != false, pairs(attributes)))
+  attributes = map(s -> s == true ? "" : s, attributes)
   if length(attributes) > 0
     parse_key(s) = " " * String(s) * parse_tag_attributes(attributes[s])
     parsed_attributes = reduce(*, map(parse_key, keys(attributes)))

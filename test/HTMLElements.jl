@@ -1,5 +1,7 @@
 using HTMLBuilder, Test
 
+@register customelement
+
 function tests()
   @testset "tags" begin
     @test HTMLBuilder.open_tag(:a) == "<a>"
@@ -9,6 +11,10 @@ function tests()
     @test HTMLBuilder.tag(:DOCTYPE, left_exclamation = true) == "<!DOCTYPE>"
     @test HTMLBuilder.tag(:img, (; src = "#", alt = "image")) ==
           "<img src='#' alt='image'>"
+
+    @test string(button((; disabled = ""))) == "<button disabled></button>"
+    @test string(button((; disabled = true))) == "<button disabled></button>"
+    @test string(button((; disabled = false))) == "<button></button>"
   end
 
   @testset "construction and equality" begin
@@ -21,6 +27,10 @@ function tests()
     ]
       @test f() == f()
     end
+  end
+
+  @testset "register" begin
+    @test string(customelement()) == raw"<customelement></customelement>"
   end
 
   @testset "show" begin
