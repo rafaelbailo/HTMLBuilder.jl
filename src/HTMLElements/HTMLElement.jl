@@ -49,7 +49,6 @@ function HTMLElement(
     computed_config,
   )
 end
-
 export HTMLElement
 
 @equality_by_fields HTMLElement

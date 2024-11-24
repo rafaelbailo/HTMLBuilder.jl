@@ -15,3 +15,8 @@ const FORMAT_SETTINGS = (;
   whitespace_ops_in_indices = true,
   whitespace_typedefs = true,
 )
+
+const DEFAULT_BUILD_SITE_CONFIG =
+  (; assets_path = "assets", dist_path = "dist", site_path = "site")
+
+const HTMLBuilder_SIGNATURE = "Site assembled by HTMLBuilder.jl — https://rafaelbailo.github.io/HTMLBuilder.jl/stable/"
