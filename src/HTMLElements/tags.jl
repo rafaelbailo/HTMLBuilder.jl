@@ -1,23 +1,24 @@
-open_tag(s::Symbol, args::NamedTuple = (;)) = tag(s, args);
-close_tag(s::Symbol, args::NamedTuple = (;)) = tag(s, args, left_bar = true);
+open_tag(s::Symbol, args::NamedTuple = (;)) = tag(s, args)
+
+close_tag(s::Symbol, args::NamedTuple = (;)) = tag(s, args, left_slash = true)
 
 function tag(
   s::Symbol,
   attributes::NamedTuple = (;);
-  left_bar = false,
-  right_bar = false,
+  left_slash = false,
+  right_slash = false,
   left_exclamation = false,
 )
   parsed_attributes = parse_tag_attributes(attributes)
-  left_bar_string = left_bar ? "/" : ""
+  left_slash_string = left_slash ? "/" : ""
   left_exclamation_string = left_exclamation ? "!" : ""
-  right_bar_string = right_bar ? "/" : ""
+  right_slash_string = right_slash ? "/" : ""
   return left_tag() *
-         left_bar_string *
+         left_slash_string *
          left_exclamation_string *
          String(s) *
          parsed_attributes *
-         right_bar_string *
+         right_slash_string *
          right_tag()
 end
 
