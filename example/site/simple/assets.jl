@@ -6,7 +6,7 @@ HTMLDoc(
     body(
       h1("Loading Assets"),
       p("This page loads HTMLBuilder.jl's logo from the assets folder:"),
-      img((; src = "./assets/logos/logo-large.svg")),
+      img((; width = "100%", src = "./logos/logo-large.svg")),
     ),
   ),
 )

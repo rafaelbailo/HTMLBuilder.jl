@@ -38,7 +38,7 @@ macro buildPages(dist_path, site_path)
 
             if ex == "jl"
               parsed_target = nothing
-              #               HTMLBuilder.@parseJuliaPage source target
+              HTMLBuilder.@parse_julia_page source target verbose
             elseif ex == "txt"
               HTMLBuilder.@parse_redirection_page source target verbose
             end
@@ -65,41 +65,3 @@ function get_extension_source_and_target(root, file, dist_path, site_path)
   )
   return ex, source, target
 end
-
-# macro parseJuliaPage(source, target)
-#   return esc(quote
-#     page = include(source)
-#     parsed_target = HTMLBuilder.parseJuliaPage(source, target, page)
-#   end)
-# end
-
-# parseJuliaPage(source, target, page::Nothing) = nothing;
-
-# function parseJuliaPage(source, target, page::HTMLElement)
-#   println("    Building $target.")
-
-#   mkpath(dirname(target))
-#   open(target, "w") do f
-#     write(f, comment(" $(HTMLBuilder.HTMLBuilder_SIGNATURE) "))
-#     return write(f, page)
-#   end
-#   return target
-# end
-
-# function parseJuliaPage(source, target, tuple::Tuple{<:String, <:HTMLElement})
-#   path, page = tuple
-#   trimmedTarget = join(split(target, "/")[1:(end - 1)], "/")
-#   newTarget = joinpath(trimmedTarget, path)
-#   if newTarget[(end - 4):end] != ".html"
-#     newTarget *= ".html"
-#   end
-#   return parseJuliaPage(source, newTarget, page)
-# end
-
-# function parseJuliaPage(
-#   source,
-#   target,
-#   vector::Vector{<:Tuple{<:String, <:HTMLElement}},
-# )
-#   return map(s -> parseJuliaPage(source, target, s), vector)
-# end

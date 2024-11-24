@@ -19,4 +19,4 @@ const FORMAT_SETTINGS = (;
 const DEFAULT_BUILD_SITE_CONFIG =
   (; assets_path = "assets", dist_path = "dist", site_path = "site")
 
-const HTMLBuilder_SIGNATURE = "Site assembled by HTMLBuilder.jl — https://rafaelbailo.github.io/HTMLBuilder.jl/stable/"
+const HTMLBuilder_SIGNATURE = "Site assembled by HTMLBuilder.jl — https://rafaelbailo.github.io/HTMLBuilder.jl/"

@@ -17,6 +17,7 @@ include("./HTMLElements/tags.jl")
 include("./parse_HTML/parse_HTML.jl")
 
 include("./build_site/build_site.jl")
+include("./build_site/parse_julia_page.jl")
 include("./build_site/parse_redirection_page.jl")
 include("./build_site/site_map.jl")
 
