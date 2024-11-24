@@ -36,6 +36,8 @@ body(
 )
 ```
 
+**HTMLBuilder.jl** can be used to build and manage a complex site through the `@build_site` macro. The [`example`](https://github.com/rafaelbailo/HTMLBuilder.jl/tree/main/example) directory contains a [`site`](https://github.com/rafaelbailo/HTMLBuilder.jl/tree/main/example/site) directory populated with Julia code. The `@build_site` macro parses these files and generates [`dist`](https://github.com/rafaelbailo/HTMLBuilder.jl/tree/main/example/dist), a complete HTML site. For more details, see the [documentation](https://rafaelbailo.github.io/HTMLBuilder.jl/stable/build_site/).
+
 ### Bug reports, feature requests, and contributions
 
 Please see [the contribution guidelines](https://github.com/rafaelbailo/HTMLBuilder.jl/blob/main/CONTRIBUTING.md).
