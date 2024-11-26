@@ -30,7 +30,7 @@ The path of `page.jl` can be manually specified. Instead of returning an `HTMLEl
 
 ## Multiple Julia pages created by one file
 
-If you want to create several pages with a single file, you can return a vector of pages: `Vector{Tuple{String, HTMLElement}}`. Each element is a `Tuple` with two elements: a custom path, and a `HTMLElement`. For example, see [`example/site/advanced/many_pages.jl`](https://github.com/rafaelbailo/HTMLBuilder.jl/tree/main/example/site/advanced/many_pages.jl), which generates all the pages in the [`example/dist/advanced/fibonacci`](https://github.com/rafaelbailo/HTMLBuilder.jl/tree/main/example/dist/advanced/fibonacci) folder.
+If you want to create several pages with a single file, you can return a vector of pages: `Vector{Tuple{String, HTMLElement}}`. Each element is a `Tuple` with two elements: a custom path, and a `HTMLElement`. For example, see [`example/site/advanced/many_pages.jl`](https://github.com/rafaelbailo/HTMLBuilder.jl/tree/main/example/site/advanced/many_pages.jl), which generates all the pages in the [`example/dist/advanced/tribonacci`](https://github.com/rafaelbailo/HTMLBuilder.jl/tree/main/example/dist/advanced/tribonacci) folder.
 
 ## Redirection pages
 
