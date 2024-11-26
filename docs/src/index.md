@@ -16,7 +16,10 @@ CurrentModule = HTMLBuilder
 [![Aqua](https://raw.githubusercontent.com/JuliaTesting/Aqua.jl/master/badge.svg)](https://github.com/JuliaTesting/Aqua.jl)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**HTMLBuilder.jl** is a package for handling HTML in idiomatic Julia. Currently, it can construct and parse HTML code.
+**HTMLBuilder.jl** is a package for handling HTML in idiomatic Julia. Currently, it can:
+- Generate HTML code.
+- Parse HTML code.
+- Build a site with multiple pages.
 
 All the HTML elements are treated as Julia structs, so you can easily generate HTML programmatically. For instance, we can list the first `N` Fibonacci numbers. First we import **HTMLBuilder.jl** and define the `Fibonacci` function, as well as `N=5`:
 ```@repl 1
@@ -32,6 +35,8 @@ body(
   ul([li(string(Fibonacci(n))) for n ∈ 1:N]),
 )
 ```
+
+**HTMLBuilder.jl** can be used to build and manage a complex site through the `@build_site` macro. The [`example`](https://github.com/rafaelbailo/HTMLBuilder.jl/tree/main/example) directory contains a [`site`](https://github.com/rafaelbailo/HTMLBuilder.jl/tree/main/example/site) directory populated with Julia code. The `@build_site` macro parses these files and generates [`dist`](https://github.com/rafaelbailo/HTMLBuilder.jl/tree/main/example/dist), a complete HTML site. For more details, see the [documentation](https://rafaelbailo.github.io/HTMLBuilder.jl/stable/build_site/).
 
 ### Bug reports, feature requests, and contributions
 

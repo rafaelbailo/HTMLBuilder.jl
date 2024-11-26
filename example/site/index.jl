@@ -23,12 +23,21 @@ HTMLDoc(
               "A page with a custom path",
             ),
           ),
-          li("The Fibonacci numbers, each on its own page:"),
+          li(
+            "The ",
+            a(
+              (;
+                href = "https://en.wikipedia.org/wiki/Generalizations_of_Fibonacci_numbers#Tribonacci_numbers"
+              ),
+              "Tribonacci numbers",
+            ),
+            ", each on its own page:",
+          ),
           ul([
             li(
               a(
-                (; href = "/advanced/fibonacci/$(n).html"),
-                "The $(n)th Fibonacci number",
+                (; href = "/advanced/tribonacci/$(n).html"),
+                "The n = $(n) Tribonacci number",
               ),
             ) for n ∈ 1:20
           ]),
