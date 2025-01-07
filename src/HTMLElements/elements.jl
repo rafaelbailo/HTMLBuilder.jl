@@ -1,5 +1,7 @@
 const HTMLElementsExclamation = (:DOCTYPE,)
 
+const HTMLElementsQuestions = (:xml,)
+
 const HTMLElementsGhost = (:collection, :HTMLDoc)
 
 const HTMLElementsIndent = (
@@ -25,7 +27,7 @@ const HTMLElementsIndent = (
 )
 
 const HTMLElementsSingleTag =
-  (:br, :DOCTYPE, :hr, :img, :link, :meta, :pseudobr, :source)
+  (:br, :DOCTYPE, :hr, :img, :link, :meta, :pseudobr, :source, :xml)
 
 const HTMLElementsOther = (
   :a,
@@ -33,6 +35,7 @@ const HTMLElementsOther = (
   :button,
   :code,
   :comment,
+  :file,
   :h1,
   :h2,
   :h3,
@@ -42,10 +45,16 @@ const HTMLElementsOther = (
   :i,
   :iframe,
   :kbd,
+  :manifest,
   :maths,
+  :metadata,
   :p,
   :pre,
+  :resource,
+  :resources,
   :samp,
+  :schema,
+  :schemaversion,
   :small,
   :span,
   :sup,
@@ -56,6 +65,7 @@ const HTMLElementsOther = (
 const HTMLElements = sort(
   unique((
     HTMLElementsExclamation...,
+    HTMLElementsQuestions...,
     HTMLElementsGhost...,
     HTMLElementsIndent...,
     HTMLElementsSingleTag...,
@@ -69,6 +79,7 @@ for el ∈ HTMLElements
   @eval begin
     @register $el
     get_default_config(s::$(Symbol(el, :Val))) = (;
+      questions = $(el in HTMLElementsQuestions),
       exclamation = $(el in HTMLElementsExclamation),
       ghost = $(el in HTMLElementsGhost),
       indent = $(el in HTMLElementsIndent),

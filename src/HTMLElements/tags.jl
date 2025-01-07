@@ -8,16 +8,22 @@ function tag(
   left_slash = false,
   right_slash = false,
   left_exclamation = false,
+  left_question = false,
+  right_question = false,
 )
   parsed_attributes = parse_tag_attributes(attributes)
   left_slash_string = left_slash ? "/" : ""
+  left_question_string = left_question ? "?" : ""
   left_exclamation_string = left_exclamation ? "!" : ""
+  right_question_string = right_question ? "?" : ""
   right_slash_string = right_slash ? "/" : ""
   return left_tag() *
          left_slash_string *
+         left_question_string *
          left_exclamation_string *
          String(s) *
          parsed_attributes *
+         right_question_string *
          right_slash_string *
          right_tag()
 end

@@ -106,6 +106,7 @@ get_default_children(s::Val, config) = Content[]
 function Base.show(io::IO, x::HTMLElement{Val{S}}) where {S}
   config = x.config
   exclamation = check_key(config, :exclamation)
+  questions = check_key(config, :questions)
   ghost = check_key(config, :ghost)
   single_tag = check_key(config, :single_tag)
   indent = check_key(config, :indent)
@@ -120,7 +121,16 @@ function Base.show(io::IO, x::HTMLElement{Val{S}}) where {S}
     if x isa commentType
       print(inner_io, left_comment_tag())
     else
-      print(inner_io, tag(S, x.attributes, left_exclamation = exclamation))
+      print(
+        inner_io,
+        tag(
+          S,
+          x.attributes,
+          left_exclamation = exclamation,
+          left_question = questions,
+          right_question = questions,
+        ),
+      )
     end
     print(inner_io, line)
   end
